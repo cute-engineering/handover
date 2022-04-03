@@ -115,6 +115,39 @@ static inline HandoverRecord *handover_record_by_type(Handover const *self,
     return NULL;
 }
 
+static inline char const *handover_type_to_string(uint32_t type)
+{
+    switch (type)
+    {
+    case HANDOVER_FREE:
+        return "free";
+
+    case HANDOVER_SELF:
+        return "self";
+
+    case HANDOVER_STACK:
+        return "stack";
+
+    case HANDOVER_KERNEL:
+        return "kernel";
+
+    case HANDOVER_FILE:
+        return "file";
+
+    case HANDOVER_RSDP:
+        return "rsdp";
+
+    case HANDOVER_FDT:
+        return "fdt";
+
+    case HANDOVER_FB:
+        return "fb";
+
+    default:
+        return "unknown";
+    }
+}
+
 #endif
 
 /* --- Header --------------------------------------------------------------- */
