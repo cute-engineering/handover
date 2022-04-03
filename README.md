@@ -22,21 +22,39 @@
 
 ## Free - `0x00000000`
 
+Free for general use
+
 ## Self - `0xa24f988d`
+
+The handover structure
 
 ## Stack - `0xf65b391b`
 
+CPU stack
+
 ## Kernel - `0xbfc71b20`
+
+Kernel region
 
 ## File - `0xcbc36d3b`
 
+Loaded file
+
 ## RSDP - `0x8d3bbb`
+
+ACPI RSDP
 
 ## FDT - `0xb628bbc1`
 
+Flatten device tree blob
+
 ## FB - `0xe2d55685`
 
+Framebuffer
+
 ## END - `0xffffffff`
+
+End marker
 
 # Definitions
 
