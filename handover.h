@@ -48,9 +48,9 @@ typedef struct
 
         struct
         {
-            uint32_t car;
-            uint32_t cdr;
-        };
+            uint32_t name;
+            uint32_t meta;
+        } file;
 
         uint64_t more;
     };
@@ -192,7 +192,7 @@ static inline HandoverRecord *handover_file(Handover *self, char const *name)
     for (uint32_t i = 0; i < self->count; ++i)
     {
         HandoverRecord *record = handover_record(self, i);
-        char const *ho_name = handover_string(self, record->car);
+        char const *ho_name = handover_string(self, record->file.name);
 
         if (record->type == HANDOVER_FILE && !handover_streq(name, ho_name))
         {
