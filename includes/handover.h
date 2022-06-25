@@ -96,11 +96,11 @@ typedef void HandoverEntry(
             .type = HANDOVER_FILE \
         }
 
-#    define HANDOVER(...)                                                        \
-        __attribute__((section(HANDOVER_SECTION),                                \
-                       used)) static HandoverRequest const handover_header[] = { \
-            {.type = HANDOVER_MAGIC},                                            \
-            __VA_ARGS__ __VA_OPT__(, ){.type = HANDOVER_END},                    \
+#    define HANDOVER(...)                                                  \
+        __attribute__((section(HANDOVER_SECTION),                          \
+                       used)) static HandoverRequest handover_header[] = { \
+            {.type = HANDOVER_MAGIC},                                      \
+            __VA_ARGS__ __VA_OPT__(, ){.type = HANDOVER_END},              \
         };
 
 #endif
