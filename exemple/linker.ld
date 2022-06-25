@@ -1,4 +1,4 @@
-ENTRY(_kstart)
+ENTRY(_kmain)
 
 SECTIONS
 {
