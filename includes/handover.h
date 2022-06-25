@@ -66,41 +66,41 @@ typedef void HandoverEntry(
 /* --- Header Utilities ----------------------------------------------------- */
 
 #ifdef HANDOVER_INCLUDE_MACROS
-#    define HANDOVER_REQ_START     \
-        {                          \
-            .type = HANDOVER_MAGIC \
+#    define HANDOVER_REQ_START    \
+        {                         \
+            .tag = HANDOVER_MAGIC \
         }
 
-#    define HANDOVER_REQ_END     \
-        {                        \
-            .type = HANDOVER_END \
-        }
-
-#    define WITH_FB             \
+#    define HANDOVER_REQ_END    \
         {                       \
-            .type = HANDOVER_FB \
+            .tag = HANDOVER_END \
         }
 
-#    define WITH_ACPI             \
-        {                         \
-            .type = HANDOVER_RSDP \
+#    define WITH_FB            \
+        {                      \
+            .tag = HANDOVER_FB \
         }
 
-#    define WITH_FDT             \
+#    define WITH_ACPI            \
         {                        \
-            .type = HANDOVER_FDT \
+            .tag = HANDOVER_RSDP \
         }
 
-#    define WITH_FILES            \
-        {                         \
-            .type = HANDOVER_FILE \
+#    define WITH_FDT            \
+        {                       \
+            .tag = HANDOVER_FDT \
+        }
+
+#    define WITH_FILES           \
+        {                        \
+            .tag = HANDOVER_FILE \
         }
 
 #    define HANDOVER(...)                                                  \
         __attribute__((section(HANDOVER_SECTION),                          \
                        used)) static HandoverRequest handover_header[] = { \
-            {.type = HANDOVER_MAGIC},                                      \
-            __VA_ARGS__ __VA_OPT__(, ){.type = HANDOVER_END},              \
+            {.tag = HANDOVER_MAGIC},                                       \
+            __VA_ARGS__ __VA_OPT__(, ){.tag = HANDOVER_END},               \
         };
 
 #endif
