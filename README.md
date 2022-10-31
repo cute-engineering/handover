@@ -102,6 +102,10 @@ Flatten device tree blob
 
 Framebuffer
 
+## CMDLINE - `0x435140c4`
+
+Kernel command line
+
 ## END - `0xffffffff`
 
 End marker
