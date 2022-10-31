@@ -112,5 +112,4 @@ End marker
 
 # Definitions
 
-- **C** - [handover.h](handover.h)
-- **Rust** - [handover.rs](handover.rs)
+- **C** - [handover.h](includes/handover.h)
