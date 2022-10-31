@@ -45,7 +45,7 @@ struct HandoverRecord
     uint64_t start;
     uint64_t size;
     uint64_t more;
-} ;
+};
 ```
 
 # Machine State
@@ -112,4 +112,4 @@ End marker
 
 # Definitions
 
-- **C** - [handover.h](includes/handover.h)
+- **C** - [handover.h](handover.h)
