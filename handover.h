@@ -1,6 +1,7 @@
 #ifndef HANDOVER_H_INCLUDED
 #define HANDOVER_H_INCLUDED
 
+#include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
 
@@ -131,7 +132,7 @@ typedef void HandoverEntry(
 
 #ifdef HANDOVER_INCLUDE_UTILITES
 
-char const *handover_tag_name(HandoverTag tag);
+char const *handover_tag_name(uint32_t tag);
 
 bool handover_mergeable(uint32_t tag);
 
@@ -150,6 +151,8 @@ void handover_insert(HandoverPayload *payload, size_t index, HandoverRecord reco
 void handover_remove(HandoverPayload *payload, size_t index);
 
 void handover_append(HandoverPayload *payload, HandoverRecord record);
+
+char const *handover_str(HandoverPayload const *payload, uint32_t offset);
 
 #endif
 

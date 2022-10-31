@@ -51,7 +51,7 @@ override INTERNALLDFLAGS :=     \
     -Wl,-T,linker.ld
 
 # Use find to glob all *.c files in the directory and extract the object names.
-override CFILES := $(shell find ./ -type f -name '*.c')
+override CFILES := $(shell find ./ -type f -name '*.c') ../handover.c
 override OBJ := $(CFILES:.c=.o)
 override HEADER_DEPS := $(CFILES:.c=.d)
 

@@ -50,7 +50,7 @@ HandoverRecord handover_half_under(HandoverRecord self, HandoverRecord other)
     if (handover_overlap(self, other) &&
         self.start < other.start)
     {
-        return {
+        return (HandoverRecord){
             .tag = self.tag,
             .flags = 0,
             .start = self.start,
@@ -58,7 +58,7 @@ HandoverRecord handover_half_under(HandoverRecord self, HandoverRecord other)
         };
     }
 
-    return {};
+    return (HandoverRecord){};
 }
 
 HandoverRecord handover_half_over(HandoverRecord self, HandoverRecord other)
@@ -66,7 +66,7 @@ HandoverRecord handover_half_over(HandoverRecord self, HandoverRecord other)
     if (handover_overlap(self, other) &&
         self.start + self.size > other.start + other.size)
     {
-        return {
+        return (HandoverRecord){
             .tag = self.tag,
             .flags = 0,
             .start = other.start + other.size,
@@ -74,7 +74,7 @@ HandoverRecord handover_half_over(HandoverRecord self, HandoverRecord other)
         };
     }
 
-    return {};
+    return (HandoverRecord){};
 }
 
 void handover_insert(HandoverPayload *payload, size_t index, HandoverRecord record)
@@ -155,4 +155,9 @@ void handover_append(HandoverPayload *payload, HandoverRecord record)
     }
 
     payload->records[payload->count++] = record;
+}
+
+char const *handover_str(HandoverPayload const *payload, uint32_t offset)
+{
+    return (char const *)payload + offset;
 }
