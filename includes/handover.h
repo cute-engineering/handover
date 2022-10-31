@@ -20,6 +20,7 @@
     TAG(RSDP, 0x8ef29c18)          \
     TAG(FDT, 0xb628bbc1)           \
     TAG(FB, 0xe2d55685)            \
+    TAG(CMDLINE, 0x435140c4)       \
     TAG(END, 0xffffffff)
 
 typedef enum
@@ -95,6 +96,12 @@ typedef void HandoverEntry(
         {                        \
             .tag = HANDOVER_FILE \
         }
+
+#    define WITH_CMDLINE            \
+        {                           \
+            .tag = HANDOVER_CMDLINE \
+        }
+
 
 #    define HANDOVER(...)                                                  \
         __attribute__((section(HANDOVER_SECTION),                          \
