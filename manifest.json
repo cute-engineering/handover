@@ -1,4 +1,5 @@
 {
+    "$schema": "https://schemas.cute.engineering/stable/cutekit.manifest.component.v1",
     "id": "handover",
     "type": "lib",
     "description": "A simple and extensible boot protocol"
