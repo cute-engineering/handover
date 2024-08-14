@@ -114,7 +114,7 @@ The following Handover Tags are defined:
     * `size`: Size of the framebuffer in bytes.
     * `fb.width`: Width of the framebuffer in pixels.
     * `fb.height`: Height of the framebuffer in pixels.
-* `fb.pitch`: Number of bytes per scanline in the framebuffer.
+    * `fb.pitch`: Number of bytes per scanline in the framebuffer.
     * `fb.format`: Pixel format of the framebuffer (e.g., `HANDOVER_RGBX8888` or `HANDOVER_BGRX8888`).
 
 * **`HANDOVER_CMDLINE` (0x435140c4)**
