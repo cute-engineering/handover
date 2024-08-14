@@ -132,7 +132,7 @@ typedef void HandoverEntry(
 
 #ifdef HANDOVER_INCLUDE_UTILITES
 
-char const *handover_tag_name(uint32_t tag);
+char const *handover_tag_name(HandoverTag tag);
 
 bool handover_mergeable(uint32_t tag);
 
